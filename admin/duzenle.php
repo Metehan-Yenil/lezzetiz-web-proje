@@ -1,22 +1,21 @@
 <?php
-// Veritabanı bağlantısı için bilgiler
+ 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "lezzetdb";
 
-// Bağlantıyı oluştur
+ 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-// Bağlantıyı kontrol et
+ 
 if ($conn->connect_error) {
     die("Bağlantı hatası: " . $conn->connect_error);
 }
 
-// Kullanıcı ID'sini al
+ 
 $kullaniciID = $_GET['id'];
 
-// Veritabanından kullanıcı bilgilerini al
+ 
 $sql = "SELECT kullaniciadi, email, ad, soyad FROM uyeler WHERE kullaniciid = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $kullaniciID);
@@ -47,7 +46,7 @@ $conn->close();
     <title>Kullanıcı Düzenleme</title>
     <h1 class="adminh1">ADMIN Panel</h1>
     <style>
-        /* Basit bir CSS kullanarak formu düzenle */
+         
         .guncelle {
             width: 50%;
             margin: auto;

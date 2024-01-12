@@ -1,19 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <h1 class="adminh1">ADMIN Panel</h1>
+    <style>
+        h1{
+            text-align: center;
+            background-color: red;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+            padding: 0 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+  
+</body>
+</html>
+
 <?php
-// Veritabanı bağlantısı için bilgiler
+ 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "lezzetdb";
 
-// Bağlantıyı oluştur
+ 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Bağlantıyı kontrol et
+ 
 if ($conn->connect_error) {
     die("Bağlantı hatası: " . $conn->connect_error);
 }
 
-// Formdan gelen verileri al
+ 
 $kullaniciadi = $_POST['kullaniciadi'];
 $email = $_POST['email'];
 $ad = $_POST['ad'];
@@ -39,6 +63,6 @@ if ($conn->query($sql) === TRUE) {
   </script>";
 }
 
-// Veritabanı bağlantısını kapat
+ 
 $conn->close();
 ?>

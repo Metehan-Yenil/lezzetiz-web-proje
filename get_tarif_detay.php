@@ -1,11 +1,11 @@
-<!-- get_tarif_detay.php -->
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="get_tarif_detay.css"> <!-- CSS dosyasını bağlama -->
+    <link rel="stylesheet" href="get_tarif_detay.css">  
  
 </head>
 <body>
@@ -14,16 +14,16 @@
 </html>
 
 <?php
-// Veritabanı bağlantısını sağlayın
+ 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "lezzetdb";
 
-// Bağlantıyı oluşturun
+ 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Bağlantıyı kontrol edin
+ 
 if ($conn->connect_error) {
     die("Bağlantı hatası: " . $conn->connect_error);
 }

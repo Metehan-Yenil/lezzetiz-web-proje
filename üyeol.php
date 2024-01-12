@@ -65,23 +65,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Ad = $_POST["adi"];
     $Soyad= $_POST["soyadi"];
 
-    // Veritabanına ekleme işlemleri burada gerçekleştirilebilir
+     
 
-    // Örnek: Veritabanına ekleme
+    
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "lezzetdb";
 
-    // Bağlantı oluştur
+    
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Bağlantıyı kontrol et
+     
     if ($conn->connect_error) {
         die("Bağlantı hatası: " . $conn->connect_error);
     }
 
-    // Veritabanına ekleme işlemleri burada gerçekleştirilebilir
+     
     $sql = "INSERT INTO uyeler (kullaniciadi, sifre, email,Ad,Soyad) VALUES ('$kullaniciAdi', '$sifre', '$eMail','$Ad','$Soyad')";
 
     if ($conn->query($sql) === TRUE) {

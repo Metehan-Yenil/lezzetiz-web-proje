@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/admin.css">
-    <title>Veritabanına Ekleme Formu</title>
+    <title>Admin paneli</title>
     <style>
     form {
         display: flex;
         flex-direction: column;
-        max-width: 300px; /* Formun genişliğini ayarlayabilirsiniz */
+        max-width: 300px; 
         margin: auto;
     }
 
@@ -42,12 +42,14 @@
     </a>
     
     <nav class="navbar">
-        <a href="#" class="active" onclick="window.location.href='../index.html'">Anasayfa</a>
+        <a href="#" class="active" onclick="window.location.href='../uye.php'">Profil</a>
+
+        <a href="#"  onclick="window.location.href='../blogadmin.php'">Blog</a>
         
     </nav>
     
     <button  onclick="GirişSayfasınaGötür()" >
-            <i class="fa-regular fa-user"> Log Out </i>
+            <i class="fa-regular fa-user" onclick="window.location.href='../kayit.php'">  Log Out </i>
             
         </button>
 </header>
@@ -72,13 +74,19 @@
             <label for="soyad">Soyad:</label>
             <input type="text" id="soyad" name="soyad" required><br>
 
-            <button type="submit">Ekle</button>
+            <button type="submit" style="background-color: lightgreen;">Ekle</button>
         </form>
 
     </div>
                 <div class="mevcutkullanicilar">
                         <h2>Mevcut Kullanıcılar</h2>
                         <?php include('listele.php'); ?>
+                </div>
+
+                <div class="mevcuttarifler">
+                    <h2>Mevcut tarifler</h2>
+                    <?php include('listeleyemek.php');?>
+
                 </div>
     
     

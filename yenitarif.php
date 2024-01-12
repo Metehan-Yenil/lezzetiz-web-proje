@@ -3,11 +3,11 @@ session_start();
 
 
 if (isset($_SESSION['kullaniciID'])) {
-    // Kullanıcı giriş yapmışsa işlemleri gerçekleştir
+    
     $kullaniciid = $_SESSION['kullaniciID'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Form verilerini işle
+       
         $tarifBaslik = $_POST['textbox1'];
         $girisYazisi = $_POST['textarea'];
         $kisiSayisi = $_POST['textbox4'];
@@ -16,35 +16,35 @@ if (isset($_SESSION['kullaniciID'])) {
         $malzemeler = $_POST['textarea1'];
         $nasilYapilir = $_POST['textarea2'];
 
-        // Veritabanına ekleme işlemleri burada gerçekleştirilebilir
+        
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "lezzetdb";
 
-        // Bağlantı oluştur
+        
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Bağlantıyı kontrol et
+        
         if ($conn->connect_error) {
             die("Bağlantı hatası: " . $conn->connect_error);
         }
 
-        // Veritabanına ekleme işlemi
+        
         $sql = "INSERT INTO yemektarifleri (tarif_basligi, tarif_aciklamasi, hazirlanma_suresi, kac_kisilik, pisirme_suresi, kullaniciid, malzemeler, nasilyapilir) VALUES ('$tarifBaslik', '$girisYazisi', '$hazirlamaSuresi', '$kisiSayisi', '$pisermeSuresi', '$kullaniciid', '$malzemeler', '$nasilYapilir')";
 
         $response = array(); // JSON yanıtı için dizi oluştur
 
         if ($conn->query($sql) === TRUE) {
-            // Başarılı bir şekilde eklendi
+            
             $response['status'] = 'success';
         } else {
-            // Hata durumunda
+            
             $response['status'] = 'error';
             $response['message'] = $conn->error;
         }
 
-        // Bağlantıyı kapat
+        
         $conn->close();
 
         // JSON yanıtını ekrana yazdır
@@ -53,8 +53,7 @@ if (isset($_SESSION['kullaniciID'])) {
         exit;
     }
 } else {
-    // Kullanıcı giriş yapmamışsa istenilen işlemleri yapabilirsiniz.
-    // Örneğin, hata mesajı döndürebilir veya giriş sayfasına yönlendirebilirsiniz.
+    
     $response = array(
         'status' => 'error',
         'message' => 'Kullanıcı girişi yapılmalıdır.'
@@ -74,6 +73,7 @@ if (isset($_SESSION['kullaniciID'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Lezzetdünyası-Üye</title>
     <link rel="stylesheet" href="styles/yenitarif.css">
+    
     <style>
         p {
             font-size: 14px;
@@ -89,7 +89,7 @@ if (isset($_SESSION['kullaniciID'])) {
         tr{
             border-radius: 3rem;
         }
-         /* Yeni Eklenen Stiller */
+         
          #bilgiMesaji {
             display: none;
             padding: 20px;
@@ -149,7 +149,7 @@ if (isset($_SESSION['kullaniciID'])) {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    // Kullanıcı ID'yi al
+    
     var kullaniciID = getParameterByName('kullaniciID');
 
     
@@ -178,7 +178,7 @@ if (isset($_SESSION['kullaniciID'])) {
                                     <th>Giriş Yazısı *</th>
                                 </tr>
                                 <tr>
-                                    <td><textarea name="textarea" rows="4" cols="50"></textarea></td>
+                                    <td><textarea name="textarea" rows="4" cols="50" id="girisyazisick"></textarea></td>
                                 </tr>
                                 <tr>
                                     <th>Kişi Sayısı *</th>
@@ -217,26 +217,26 @@ if (isset($_SESSION['kullaniciID'])) {
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Form verilerini işle
+   
     $tarifBaslik = $_POST['textbox1'];
     $girisYazisi = $_POST['textarea'];
     $kisiSayisi = $_POST['textbox4'];
     $hazirlamaSuresi = $_POST['textbox5'];
     $pisermeSuresi = $_POST['textbox6'];
-    $kullaniciid = $_POST['kullaniciID']; // Kullanıcı ID'sini al
+    $kullaniciid = $_POST['kullaniciID']; 
     $malzemeler = $_POST['textarea1'];
     $nasilYapilir = $_POST['textarea2'];
 
-    // Veritabanına ekleme işlemleri burada gerçekleştirilebilir
+    
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "lezzetdb";
 
-    // Bağlantı oluştur
+    
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Bağlantıyı kontrol et
+    
     if ($conn->connect_error) {
         die("Bağlantı hatası: " . $conn->connect_error);
     }
@@ -244,21 +244,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Veritabanına ekleme işlemi
     $sql = "INSERT INTO yemektarifleri (tarif_basligi, tarif_aciklamasi, hazirlanma_suresi, kac_kisilik, pisirme_suresi, kullaniciid,malzemeler, nasilyapilir) VALUES ('$tarifBaslik', '$girisYazisi', '$hazirlamaSuresi', '$kisiSayisi', '$pisermeSuresi', '$kullaniciid', '$malzemeler', '$nasilYapilir')";
 
-    $response = array(); // JSON yanıtı için dizi oluştur
+    $response = array(); 
 
     if ($conn->query($sql) === TRUE) {
-        // Başarılı bir şekilde eklendi
+        
         $response['status'] = 'success';
     } else {
-        // Hata durumunda
+        
         $response['status'] = 'error';
         $response['message'] = $conn->error;
     }
 
-    // Bağlantıyı kapat
+    
     $conn->close();
 
-    // JSON yanıtını ekrana yazdır
+   
     header('Content-Type: application/json');
     echo json_encode($response);
     exit;
@@ -278,22 +278,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .then(response => response.text())
         .then(data => {
             try {
-                // JSON formatına çevirme denemesi yap
+                
                 var jsonData = JSON.parse(data);
 
                 console.log('Server Response:', jsonData);
 
                 if (jsonData.status === 'success') {
-                    // Başarı mesajını göster
+                    
                     var bilgiMesaji = document.getElementById('bilgiMesaji');
                     bilgiMesaji.innerHTML = 'Tarif başarıyla eklendi.';
                     bilgiMesaji.style.backgroundColor = '#28a745';
                     bilgiMesaji.style.display = 'block';
 
-                    // Ekleme işlemi başarılı olduğunda başka bir sayfaya yönlendirilebilirsiniz
+                    
                     window.location.href = 'uye.php';
                 } else {
-                    // Hata mesajını göster
+                   
                     var bilgiMesaji = document.getElementById('bilgiMesaji');
                     bilgiMesaji.innerHTML = 'Hata: ' + jsonData.message;
                     bilgiMesaji.style.backgroundColor = '#dc3545';
@@ -315,3 +315,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </section>
 </body>
 </html>
+
+

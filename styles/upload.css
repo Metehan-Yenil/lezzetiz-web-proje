@@ -114,8 +114,8 @@ body{
 .arama_kısmı {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Yatayda ortala */
-    justify-content: flex-start; /* Üste hizala */
+    align-items: center;  
+    justify-content: flex-start;  
 }
 
 .arama_kutusu{
@@ -148,7 +148,7 @@ body{
 .arama_kısmı h1{
     position: absolute;
     top: -10rem;
-    left: 1%; /* Başlığı yatayda merkezlemek için */
+    left: 1%;  
     transform: translateX(-110%);
     padding: 2rem;
     color: var(--main--color);
@@ -160,7 +160,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent; /* Çerçeve rengi beyaz */
+    background-color: transparent;  
     padding: 0;
 }
 
@@ -172,18 +172,18 @@ body{
 }
 
 button {
-    background-color: transparent; /* Arkaplan rengi şeffaf */
+    background-color: transparent;  
     border: 1px solid;
     padding: 1px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Geçiş efekti */
+    transition: background-color 0.3s ease;  
     color: #ffffff;
     border-radius: 3rem;
 }
 
 button:hover {
-    background-color: black;/* Mouse ile üzerine gelindiğinde arkaplan siyah */
-    color: white; /* Yazı rengini beyaz yapabilirsiniz */
+    background-color: black; 
+    color: white;  
 }
 
 table {
@@ -200,11 +200,11 @@ th, td {
 }
 
 .yükle{
-    background-color: transparent; /* Arkaplan rengi şeffaf */
+    background-color: transparent;  
     border: 1px solid;
     padding: 1px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Geçiş efekti */
+    transition: background-color 0.3s ease;  
     color: #ffffff;
     border-radius: 3rem;
     background-color: #dc3545;

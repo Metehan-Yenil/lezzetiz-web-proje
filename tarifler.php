@@ -1,28 +1,28 @@
 <?php
-// tarifler.php
+ 
 
-// Veritabanı bağlantısını sağlayın
+ 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "lezzetdb";
 
-// Bağlantıyı oluşturun
+ 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Bağlantıyı kontrol edin
+ 
 if ($conn->connect_error) {
     die("Bağlantı hatası: " . $conn->connect_error);
 }
 
-// Güvenli bir sorgu oluşturun
+ 
 $sql = "SELECT tarifler.*, uyeler.kullaniciadi 
         FROM yemektarifleri as tarifler
         JOIN uyeler ON tarifler.kullaniciid = uyeler.kullaniciid";
 
 $result = $conn->query($sql);
 
-// Veritabanından gelen tüm tarifleri listeleyin
+// Veritabanından gelen tüm tarifleri listele
 if ($result->num_rows > 0) {
     //echo "<div class='tarif-listesi'>";
     while ($row = $result->fetch_assoc()) {
@@ -44,6 +44,7 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Lezzetdünyası</title>
     <link rel="stylesheet" href="styles/tariflerimilistele.css">
+    
 </head>
 <body>
 <section>
@@ -87,6 +88,7 @@ if ($result->num_rows > 0) {
     <!-- home start-->
     <section class="home">
         <div class="container">
+            
             <div class="tarif-listesi">
                 <?php
                 // Yukarıda veritabanına bağlantı işlemleri yapılır

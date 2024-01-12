@@ -1,33 +1,33 @@
 <?php
-// profil.php
+ 
 
-// Oturumu başlat
+ 
 session_start();
 
-// KullanıcıID oturum değişkeninin set edilip edilmediğini kontrol et
+ 
 if(isset($_SESSION["kullaniciID"])){
     $kullaniciID = $_SESSION["kullaniciID"];
 } else {
-    // Eğer KullaniciID oturum değişkeni set edilmediyse, kullanıcıyı giriş sayfasına yönlendir veya uygun bir işlem yap
+   
     header("Location: kayit.php");
     exit();
 }
 
-// Veritabanı bağlantısını sağlayın
+ 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "lezzetdb";
 
-// Bağlantıyı oluşturun
+ 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Bağlantıyı kontrol edin
+ 
 if ($conn->connect_error) {
     die("Bağlantı hatası: " . $conn->connect_error);
 }
 
-// Güvenli bir sorgu oluşturun
+ 
 $sql = "SELECT kullaniciadi, email, ad, soyad FROM uyeler WHERE kullaniciid = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $kullaniciID);

@@ -91,7 +91,7 @@ body{
 .anasayfa_cerceve{
     display: block;
     width: 1000px;
-    height: 850px;
+    height: 1200px;
     background-color: white;
     align-items: center;
     margin: 0 auto;
@@ -172,7 +172,7 @@ body{
 }
 
 button {
-    background-color: transparent; /* Arkaplan rengi şeffaf */
+    background-color: transparent;  
     border: 1px solid;
     padding: 1px 20px;
     cursor: pointer;
@@ -183,7 +183,7 @@ button {
 
 button:hover {
     background-color: black;/* Mouse ile üzerine gelindiğinde arkaplan siyah */
-    color: white; /* Yazı rengini beyaz yapabilirsiniz */
+    color: white;  
 }
 
 table {
@@ -204,6 +204,6 @@ th, td {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent; /* Çerçeve rengi beyaz */
+    background-color: transparent;  
     padding: 0;
 }

@@ -149,7 +149,7 @@ body{
 .fast_tip {
     display: flex;
     justify-content: space-between;
-    background-color: transparent; /* Çerçeve rengi beyaz */
+    background-color: transparent;  
     padding: 10px;
     
     
@@ -157,18 +157,18 @@ body{
 }
 
 button {
-    background-color: transparent; /* Arkaplan rengi şeffaf */
+    background-color: transparent;  
     border: 1px solid;
     padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Geçiş efekti */
+    transition: background-color 0.3s ease; 
     color: #ffffff;
     border-radius: 3rem;
 }
 
 button:hover {
-    background-color: black; /* Mouse ile üzerine gelindiğinde arkaplan siyah */
-    color: white; /* Yazı rengini beyaz yapabilirsiniz */
+    background-color: black;  
+    color: white;  
 }
 
 .profil_bilgileri {
@@ -178,7 +178,7 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     max-width: 100%;
-    margin-top: -16rem; /* Merkezlemek için */
+    margin-top: -16rem;  
     margin-left: 10rem;
 }
 

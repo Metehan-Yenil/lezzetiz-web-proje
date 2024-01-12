@@ -67,11 +67,11 @@ body{
     
 }
 button {
-    background-color: transparent; /* Arkaplan rengi şeffaf */
+    background-color: transparent;  
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Geçiş efekti */
+    transition: background-color 0.3s ease;  
     color: #ffffff;
     
 }
@@ -80,8 +80,8 @@ button {
     display: flex;
 }
 button:hover {
-    background-color: black; /* Mouse ile üzerine gelindiğinde arkaplan siyah */
-    color: white; /* Yazı rengini beyaz yapabilirsiniz */
+    background-color: black;  
+    color: white;  
     border-radius: 1rem;
 }
 .üyegirişi, .üyeol{
@@ -97,9 +97,9 @@ button:hover {
     color: white;
 }
 .button-separator {
-    border-right: 1px solid #000; /* Çizgi rengini ve kalınlığını isteğinize göre ayarlayabilirsiniz */
-    margin: 0 10px; /* Çizgi ile butonlar arasındaki boşluğu ayarlayabilirsiniz */
-    height: 5rem; /* Çizgi uzunluğunu isteğinize göre ayarlayabilirsiniz */
+    border-right: 1px solid #000;  
+    margin: 0 10px;  
+    height: 5rem;  
   }
 
   .textbox-container {
@@ -130,7 +130,7 @@ button:hover {
 }
 
 .textbox input:focus {
-    border-color: var(--main--color); /* Odaklandığında kenarlığın rengini değiştir */
+    border-color: var(--main--color);  
 }
 .userlogo , .locklogo{
 width: 2rem;
@@ -141,7 +141,7 @@ height: auto;
     color: #fff;
     font-size: 1.8rem;
     padding: 10px;
-    width: 100%; /* Textbox genişliğine uyacak şekilde */
+    width: 100%;  
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -154,8 +154,7 @@ height: auto;
 
 
 
-/* script login elemanları için css */
-/* Diğer stiller buraya gelecek, yukarıdaki kodları dokunmadan ekleyebilirsiniz */
+ 
 
 #formContainer form {
     max-width: 300px;

@@ -80,8 +80,8 @@ button {
     display: flex;
 }
 button:hover {
-    background-color: black; /* Mouse ile üzerine gelindiğinde arkaplan siyah */
-    color: white; /* Yazı rengini beyaz yapabilirsiniz */
+    background-color: black;  
+    color: white;  
     border-radius: 1rem;
 }
 .üyegirişi, .üyeol{
@@ -97,9 +97,9 @@ button:hover {
     color: white;
 }
 .button-separator {
-    border-right: 1px solid #000; /* Çizgi rengini ve kalınlığını isteğinize göre ayarlayabilirsiniz */
-    margin: 0 10px; /* Çizgi ile butonlar arasındaki boşluğu ayarlayabilirsiniz */
-    height: 5rem; /* Çizgi uzunluğunu isteğinize göre ayarlayabilirsiniz */
+    border-right: 1px solid #000; /* Çizgi rengi ve kalınlığı */
+    margin: 0 10px; /* Çizgi ile butonlar arasındaki boşluk */
+    height: 5rem;  
   }
 
   .textbox-container {
@@ -155,7 +155,7 @@ height: auto;
 
 
 /* script login elemanları için css */
-/* Diğer stiller buraya gelecek, yukarıdaki kodları dokunmadan ekleyebilirsiniz */
+ 
 
 #formContainer form {
     max-width: 300px;
@@ -232,4 +232,4 @@ height: auto;
 
 
 
-/* */
+ 

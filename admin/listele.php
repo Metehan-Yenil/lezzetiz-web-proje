@@ -1,30 +1,39 @@
 <?php
-// Veritabanı bağlantısı için bilgiler
+ 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "lezzetdb";
 
-// Bağlantıyı oluştur
+ 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Bağlantıyı kontrol et
+ 
 if ($conn->connect_error) {
     die("Bağlantı hatası: " . $conn->connect_error);
 }
 
-// Mevcut kullanıcıları listeleme sorgusu
+ 
 $sql = "SELECT * FROM uyeler";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<table border='1'>";
-    echo "<tr><th>Kullanıcı Adı</th><th>E-Posta</th><th>Ad</th><th>Soyad</th><th>kullaniciid</th><th></th><th></th></tr>";
+    echo "<tr>";
+    echo "<th style='background-color: red;'>Kullanıcı Adı</th>";
+    echo "<th style='background-color: red;'>E-Posta</th>";
+    echo "<th style='background-color: red;'>Ad</th>";
+    echo "<th style='background-color: red;'>Soyad</th>";
+    echo "<th style='background-color: red;'>kullaniciid</th>";
+    echo "<th style='background-color: red;'></th>";
+    echo "<th style='background-color: red;'></th>";
+    echo "</tr>";
+
     
     while ($row = $result->fetch_assoc()) {
         echo "<tr><td>" . $row['kullaniciadi'] . "</td><td>" . $row['email'] . "</td><td>" . $row['ad'] . "</td><td>" . $row['soyad'] . "</td><td>" . $row['kullaniciid']. "</td>";
-        echo "<td><button class='duzenlekullanici' onclick='duzenleKullanici(" . $row['kullaniciid'] . ")'>düzenle</button></td>";
-        echo "<td><button class='silkullanici' onclick='silKullanici(" . $row['kullaniciid'] . ")'>sil</button></td></tr>";
+        echo "<td><button class='duzenlekullanici' onclick='duzenleKullanici(" . $row['kullaniciid'] . ")'style='background-color: lightgreen;'>düzenle</button></td>";
+        echo "<td><button class='silkullanici' onclick='silKullanici(" . $row['kullaniciid'] . ")'style='background-color: lightblue;'>sil</button></td></tr>";
     }
 
     echo "</table>";
@@ -32,7 +41,7 @@ if ($result->num_rows > 0) {
     echo "Kayıtlı kullanıcı bulunamadı.";
 }
 
-// Veritabanı bağlantısını kapat
+ 
 $conn->close();
 ?>
 

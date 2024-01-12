@@ -1,10 +1,10 @@
 <?php
-// uye.php
+ 
 
-// Oturumu başlat
+ 
 session_start();
 
-// KullanıcıID oturum değişkeninin set edilip edilmediğini kontrol et
+ 
 if(isset($_SESSION["kullaniciID"])){
     $kullaniciID = $_SESSION["kullaniciID"];
 } else {
@@ -13,21 +13,21 @@ if(isset($_SESSION["kullaniciID"])){
     exit();
 }
 
-// Veritabanı bağlantısını sağlayın
+ 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "lezzetdb";
 
-// Bağlantıyı oluşturun
+ 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Bağlantıyı kontrol edin
+ 
 if ($conn->connect_error) {
     die("Bağlantı hatası: " . $conn->connect_error);
 }
 
-// Güvenli bir sorgu oluşturun
+ 
 $sql = "SELECT Ad, Soyad FROM uyeler WHERE kullaniciid = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $kullaniciID);
@@ -86,9 +86,10 @@ $conn->close();
         <a href="#"  onclick="window.location.href='index.html'">Anasayfa</a>
         <a href="#" onclick="window.location.href='tarifler.php'" >Tüm tarifler</a>
         <a href="#" onclick="window.location.href='tarifler.php'">Popüler tarifler</a>
-        <a href="#">Blog</a>
+        <a href="#" onclick="window.location.href='blog.php'">Blog</a>
         <a href="#" class="active" onclick="window.location.href='#'">Profilim</a>
         <a href="#">İletişim</a>
+        
     </nav>
     <div class="buttons">
         <button class="büyütec">
@@ -127,6 +128,12 @@ $conn->close();
                         <button type="button">Ayarlarım</button>
                         <button type="button" onclick="window.location.href='tariflerimilistele.php'">Tariflerim</button>
                         <button type="button" onclick="window.location.href='yenitarif.php'">Tarif gönder</button>
+                        <?php
+                            if ($kullaniciID == "4") {
+                                echo "<button type='button' onclick='window.location.href=\"admin/admin.php\"'>Admin paneli</button>";
+                                
+                            }
+                        ?>
                         <button type="button" onclick="window.location.href='index.html'">Hesaptan Çıkış yap</button>
                     </div>
                 </div>

@@ -48,13 +48,27 @@
     z-index: 1000;
 }
 
+
 .header .navbar a{
-    margin-right: 70rem;
+    
+    margin-right: 50rem;
     font-size: 1.5rem;
     color: var(--black-color);
     border-bottom: 0.1rem solid transparent;
 
 }
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    margin-right: 50rem;
+}
+
+.navbar a:last-child {
+    margin-right: 20rem;
+}
+
 
 .header .navbar .active,
 .header .navbar a:hover{
@@ -100,3 +114,9 @@
 .guncelle{
     margin-left: 50rem;
 }
+
+.mevcuttarifler{
+    margin-top: 20rem;
+}
+
+

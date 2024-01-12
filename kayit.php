@@ -48,21 +48,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kullaniciAdi = $_POST["kullaniciadigiris"];
     $sifre = $_POST["sifregiris"];
 
-    // Örnek: Veritabanına ekleme
+     
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "lezzetdb";
 
-    // Bağlantı oluştur
+     
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Bağlantıyı kontrol et
+     
     if ($conn->connect_error) {
         die("Bağlantı hatası: " . $conn->connect_error);
     }
 
-    // Veritabanına ekleme işlemleri burada gerçekleştirilebilir
+    
     $sql = "SELECT * FROM uyeler WHERE kullaniciadi = '$kullaniciAdi' AND sifre = '$sifre'";
     $result = $conn->query($sql);
 
@@ -71,22 +71,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         $kullaniciID = $row["kullaniciid"];
         
-        // Oturum verilerini kaydet
+        
         $_SESSION["kullaniciID"] = $kullaniciID;
         $_SESSION["kadi"] = $kullaniciAdi;
 
-        // Veritabanı bağlantısını kapat
+         
         $conn->close();
 
-        // Kullanıcıyı uye.php sayfasına yönlendir
-        header("Location: uye.php");
-        exit();
+         
+        if ($kullaniciAdi == "admin") {
+            header("Location: admin/admin.php");
+            exit();
+        } else {
+            header("Location: uye.php");
+            exit();
+        }
     } else {
-        // Kullanıcı yoksa, uygun şekilde işle (örneğin, hata mesajı göster)
+         
         echo '<script>alert("Geçersiz giriş bilgileri");</script>';
     }
-
-    $conn->close();
+    
 }
 ?>
 </body>

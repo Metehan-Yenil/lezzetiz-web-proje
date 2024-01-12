@@ -91,18 +91,18 @@ body{
 
 
 button {
-    background-color: transparent; /* Arkaplan rengi şeffaf */
+    background-color: transparent;  
     border: 1px solid;
     padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Geçiş efekti */
+    transition: background-color 0.3s ease;  
     color: #ffffff;
     border-radius: 3rem;
 }
 
 button:hover {
-    background-color: black; /* Mouse ile üzerine gelindiğinde arkaplan siyah */
-    color: white; /* Yazı rengini beyaz yapabilirsiniz */
+    background-color: black;  
+    color: white;  
 }
 
 .container {
@@ -125,7 +125,7 @@ button:hover {
     font-size: 15px;
 }
 
-/* Tarif Listesi */
+ 
 .home .tarif-listesi {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));

@@ -1,23 +1,23 @@
 <?php
-session_start();
+
 require_once "uye.php";
 
-if(isset($_SESSION["kadi"])){
-    echo $_SESSION["kadi"]."<br>";
+if(isset($_SESSION["kullaniciID"])){
+    echo $_SESSION["kullaniciID"]."<br>";
     echo '<a href="logout.php">Çıkış</a>';
     
 
     
-    // Veritabanı bağlantısını sağlayın
+     
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "lezzetdb";
 
-    // Bağlantıyı oluşturun
+     
     $baglanti = new mysqli($servername, $username, $password, $dbname);
     
-    // SQL sorgusunu hazırla
+     
     $sorgu = "SELECT tarif_basligi, tarif_aciklamasi, hazirlanma_suresi, kac_kisilik, pisirme_suresi, malzemeler, nasilyapilir FROM yemektarifleri WHERE kullaniciid = $kullanici_id"; // Tablo adınıza uygun olarak güncelleyin
     $sonuc = mysqli_query($baglanti, $sorgu);
 
